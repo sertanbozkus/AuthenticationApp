@@ -1,0 +1,71 @@
+﻿@model SignUpFormViewModel
+
+<div class="row offset-3">
+
+    <div class="col-6" style="width:60%">
+
+        <div class="card">
+
+            <div class="card-header fw-bold fs-4 text-center">
+                Sign-Up Form
+            </div>
+
+            <div class="card-body">
+
+                <form method="post" asp-controller="Auth" asp-action="SignUp">
+
+                    @if (!string.IsNullOrWhiteSpace(ViewBag.ValidMessage))
+                    {
+                    <div asp-validation-summary="All" class="alert alert-danger fw-bold">
+                            <span>@ViewBag.ValidMessage</span>
+                    </div>
+                    }
+
+                    <div class="form-floating mb-2">
+                        <input asp-for="Email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input asp-for="FirstName" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">First Name</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input asp-for="LastName" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Last Name</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input asp-for="Password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <div class="form-floating mb-2">
+                        <input asp-for="PasswordConfirm" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password Confirm</label>
+                    </div>
+
+                    <div class="form-check text-start my-3">
+                        <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Remember me
+                        </label>
+                    </div>
+                    <button class="btn btn-primary w-100 py-2" type="submit">Sign Up</button>
+                    <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+                </form>
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
